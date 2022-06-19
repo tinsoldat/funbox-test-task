@@ -1,40 +1,32 @@
+$shadow-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%);
+
 html,
 body,
-#root,
-.App {
+#root {
   width: 100%;
   height: 100%;
 }
 
 body {
-  background-image: url('./assets/Pattern.png');
+  background-color: #444;
+  background-image: $shadow-gradient, url('./assets/Pattern.png');
   @media (min-resolution: 1.25dppx)  {
-    background-image: url('./assets/Pattern@2x.png');
+    // background-image: $shadow-gradient, url('./assets/Pattern@2x.png');
   }
-  background-size: 1280px 680px;
-  background-repeat: repeat;
-}
-
-.shadow {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%);
+  background-attachment: fixed;
+  // background-repeat: repeat;
 }
 
 .App {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .content {
   padding-bottom: 67px;
-  margin: 0 40px;
+  margin: 0 80px;
   display: flex;
   flex-direction: column;
 }
