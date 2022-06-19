@@ -11,10 +11,7 @@ export const Card = ({ name, type, amount, description, benefits, isAvailable })
       data-disabled={!isAvailable || undefined}
       data-hovered={isHovered || undefined}
       onMouseEnter={() => isAvailable && setIsHovered(true)}
-      onMouseLeave={() => {
-        if (!isAvailable) return
-        setIsHovered(false);
-      }}
+      onMouseLeave={() => isAvailable && setIsHovered(false)}
     >
       <div className="card__wrapper">
         <div className="card__content"

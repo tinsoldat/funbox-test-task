@@ -9,11 +9,17 @@ body,
 
 body {
   background-color: #444;
-  background-image: $shadow-gradient, url('./assets/Pattern.png');
-  @media (min-resolution: 1.25dppx)  {
-    background-image: $shadow-gradient, url('./assets/Pattern@2x.png');
-  }
-  background-attachment: fixed;
+  background-image: url('./assets/Pattern.png');
+}
+
+.shadow {
+  //FIXME floating viewport height on mobile
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: $shadow-gradient;
 }
 
 .App {
@@ -25,7 +31,7 @@ body {
 
 .content {
   padding-bottom: 67px;
-  margin: 0 80px;
+  margin: 0 40px;
   display: flex;
   flex-direction: column;
 }
@@ -48,4 +54,7 @@ body {
   gap: 80px;
   align-items: center;
   flex-wrap: wrap;
+  @media (max-width: 1201px) {
+    gap: 40px;
+  }
 }

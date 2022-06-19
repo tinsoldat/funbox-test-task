@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div className="App">
+    <div className="shadow" />
       <div className="content">
         <span className="title">Ты сегодня покормил кота?</span>
         <div className="food">
