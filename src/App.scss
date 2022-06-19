@@ -8,6 +8,10 @@ body,
 
 body {
   background-image: url('./assets/Pattern.png');
+  @media (min-resolution: 1.25dppx)  {
+    background-image: url('./assets/Pattern@2x.png');
+  }
+  background-size: 1280px 680px;
   background-repeat: repeat;
 }
 
