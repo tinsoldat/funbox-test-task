@@ -11,10 +11,9 @@ body {
   background-color: #444;
   background-image: $shadow-gradient, url('./assets/Pattern.png');
   @media (min-resolution: 1.25dppx)  {
-    // background-image: $shadow-gradient, url('./assets/Pattern@2x.png');
+    background-image: $shadow-gradient, url('./assets/Pattern@2x.png');
   }
   background-attachment: fixed;
-  // background-repeat: repeat;
 }
 
 .App {
