@@ -59,7 +59,11 @@ export const Card = ({ name, type, amount, description, benefits, isAvailable })
             ? isSelected
               ? description
               : <>
-                Чего сидишь? Порадуй котэ, <span className='card__buy' onClick={() => setIsSelected(true)}>
+                Чего сидишь? Порадуй котэ, <span className='card__buy'
+                  onClick={() => setIsSelected(true)}
+                  onMouseEnter={() => isAvailable && setIsHovered(true)}
+                  onMouseLeave={() => isAvailable && setIsHovered(false)}
+                >
                   <button className="underlined inline-btn">купи</button>.
                 </span>
               </>
