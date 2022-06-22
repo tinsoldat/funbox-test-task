@@ -5,6 +5,20 @@ body,
   height: 100%;
 }
 
+button {
+  background: unset;
+  border: unset;
+  color: unset;
+  padding: unset;
+  margin: unset;
+}
+
+.inline-btn {
+  display: inline;
+  cursor: pointer;
+  line-height: 0;
+}
+
 body {
   background-color: #444;
   background-image: url('./assets/Pattern.png');
@@ -12,6 +26,8 @@ body {
 
 .shadow {
   //FIXME floating viewport height on mobile
+  pointer-events: none;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;

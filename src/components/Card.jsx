@@ -10,8 +10,6 @@ export const Card = ({ name, type, amount, description, benefits, isAvailable })
       data-selected={isSelected || undefined}
       data-disabled={!isAvailable || undefined}
       data-hovered={isHovered || undefined}
-      onMouseEnter={() => isAvailable && setIsHovered(true)}
-      onMouseLeave={() => isAvailable && setIsHovered(false)}
     >
       <div className="card__wrapper">
         <div className="card__content"
@@ -20,6 +18,8 @@ export const Card = ({ name, type, amount, description, benefits, isAvailable })
             if (!isSelected) setIsHovered(false)
             setIsSelected(!isSelected)
           }}
+          onMouseEnter={() => isAvailable && setIsHovered(true)}
+          onMouseLeave={() => isAvailable && setIsHovered(false)}
         >
           <div className="card__image" />
           <div className="card__info info">
@@ -59,7 +59,7 @@ export const Card = ({ name, type, amount, description, benefits, isAvailable })
               ? description
               : <>
                 Чего сидишь? Порадуй котэ, <span className='card__buy' onClick={() => setIsSelected(true)}>
-                  <span className="underlined">купи</span>.
+                  <button className="underlined inline-btn">купи</button>.
                 </span>
               </>
             : <>Печалька, {type} закончился.</>
