@@ -11,15 +11,16 @@ export const Card = ({ name, type, amount, description, benefits, isAvailable })
       data-disabled={!isAvailable || undefined}
       data-hovered={isHovered || undefined}
     >
-      <div className="card__wrapper">
+      <div className="card__wrapper"
+        onClick={() => {
+          if (!isAvailable) return
+          if (!isSelected) setIsHovered(false)
+          setIsSelected(!isSelected)
+        }}
+        onMouseEnter={() => isAvailable && setIsHovered(true)}
+        onMouseLeave={() => isAvailable && setIsHovered(false)}
+      >
         <div className="card__content"
-          onClick={() => {
-            if (!isAvailable) return
-            if (!isSelected) setIsHovered(false)
-            setIsSelected(!isSelected)
-          }}
-          onMouseEnter={() => isAvailable && setIsHovered(true)}
-          onMouseLeave={() => isAvailable && setIsHovered(false)}
         >
           <div className="card__image" />
           <div className="card__info info">
